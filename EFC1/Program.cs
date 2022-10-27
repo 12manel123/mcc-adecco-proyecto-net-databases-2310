@@ -1,9 +1,12 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using EFC1.Models;
+
+Console.WriteLine("Hello, World!");
 
 /*var factory = new AppDbContextFactory();
 var context = factory.CreateDbContext(null);*/
 var context = new AppDbContextFactory().CreateDbContext(null);
 
+/*
 Console.WriteLine("================================= GUARDAR UNO ====================");
 Book book1 = new Book { Isbn = "123456ER", Title = "DOnKijte de la Almeria" };
 Book book2 = new Book { Isbn = "9876544ER", Title = "Santmaria de la coloma" };
@@ -27,3 +30,11 @@ context.SaveChanges();
 
 Console.WriteLine(book3);
 Console.WriteLine(book4);
+
+ */
+Console.WriteLine("================================= REQUIRED ====================");
+Book book5 = new Book { Isbn = "555555", Title = "Test3",ReleaseYear=2002 };
+context.Books.Add(book5);
+Console.WriteLine(book5);
+
+context.SaveChanges();

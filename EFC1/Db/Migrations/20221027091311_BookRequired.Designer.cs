@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFC1.Db.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221026114111_Initial")]
-    partial class Initial
+    [Migration("20221027091311_BookRequired")]
+    partial class BookRequired
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,11 +28,19 @@ namespace EFC1.Db.Migrations
 
                     b.Property<string>("Isbn")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)")
+                        .HasColumnName("isbn");
+
+                    b.Property<int>("ReleaseYear")
+                        .HasColumnType("int")
+                        .HasColumnName("release_year");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)")
+                        .HasColumnName("title");
 
                     b.HasKey("Id");
 
