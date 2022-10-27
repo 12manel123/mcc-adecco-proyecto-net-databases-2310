@@ -5,6 +5,7 @@ global using Microsoft.EntityFrameworkCore.Metadata;
 
 global using System.ComponentModel.DataAnnotations;
 global using Microsoft.EntityFrameworkCore.Design;
+global using System.ComponentModel.DataAnnotations.Schema;
 
 global using EFC1;
 global using EFC1.Db;

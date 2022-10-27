@@ -26,14 +26,13 @@ namespace EFC1.Db.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("longtext")
                         .HasColumnName("description");
 
                     b.Property<string>("Isbn")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)")
                         .HasColumnName("isbn");
 
                     b.Property<int>("ReleaseYear")
@@ -42,8 +41,8 @@ namespace EFC1.Db.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)")
                         .HasColumnName("title");
 
                     b.HasKey("Id");

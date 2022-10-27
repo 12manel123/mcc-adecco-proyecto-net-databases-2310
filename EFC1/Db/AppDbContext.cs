@@ -6,8 +6,8 @@ public class AppDbContext : DbContext{
     }
 
     //Configurar columans a nivel gloval
-    protected override void ConfigureConventions(ModelConfigurationBuilder confBuilder) {
+   /* protected override void ConfigureConventions(ModelConfigurationBuilder confBuilder) {
         confBuilder.Properties<string>().HaveMaxLength(100);
-    }
+    }*/
 }
 
