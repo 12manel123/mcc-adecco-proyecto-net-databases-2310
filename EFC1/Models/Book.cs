@@ -15,8 +15,14 @@ public class Book {//exactamente el mismo name
 
     [Required, Column("release_year")]
     public int ReleaseYear { get; set; }
+
+
+    [Required, Column("description")]
+    public string Description { get; set; }
+
+
     public override string ToString() {
-        return $"Book: {Id}, Title:{Title}, Isbn:{Isbn}, Year:{ReleaseYear}";
+        return $"Book: {Id}, Title:{Title}, Isbn:{Isbn}, Year:{ReleaseYear}, Description:{Description}";
     }
 
 

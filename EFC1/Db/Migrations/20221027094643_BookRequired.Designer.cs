@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFC1.Db.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221027091311_BookRequired")]
+    [Migration("20221027094643_BookRequired")]
     partial class BookRequired
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,10 +26,16 @@ namespace EFC1.Db.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("description");
+
                     b.Property<string>("Isbn")
                         .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("isbn");
 
                     b.Property<int>("ReleaseYear")
@@ -38,8 +44,8 @@ namespace EFC1.Db.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("varchar(15)")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("title");
 
                     b.HasKey("Id");

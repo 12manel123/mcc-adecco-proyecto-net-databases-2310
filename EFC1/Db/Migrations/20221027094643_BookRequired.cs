@@ -18,11 +18,13 @@ namespace EFC1.Db.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    title = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false)
+                    title = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    isbn = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false)
+                    isbn = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    release_year = table.Column<int>(type: "int", nullable: false)
+                    release_year = table.Column<int>(type: "int", nullable: false),
+                    description = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
