@@ -11,11 +11,11 @@ public class Book {//exactamente el mismo name
     [Required, Column("isbn"), MaxLength(15, ErrorMessage = "Debe ser menor de 15 catacteres")]
     public string Isbn { get; set; }
 
-    [Required, Column("release_year")]
+    [Column("release_year")]
     public int ReleaseYear { get; set; }
 
 
-    [Required, Column("description")]
+    [Column("description")]
     public string Description { get; set; }
 
 
